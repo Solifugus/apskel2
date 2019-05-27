@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="manifest" href="/manifest.json">
+		<link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.min.css">
+		<link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+		<script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+		<script>
+			if('serviceWorker' in navigator) {
+				navigator.serviceWorker.register('/serviceworker.js')
+				.then(() => console.log("Apskel2 Service Worker Registered."))
+				.catch(e => console.log(e));
+			}
+		</script>
+	</head>
+	<body>
+		<ons-button onclick="alert('Test Succeeded')">TEST</ons-button>
+	</body>
+</html>

@@ -1,0 +1,3 @@
+
+Resources:
+	Onsen UI PWA: https://onsen.io/v2/guide/pwa/tutorial.html

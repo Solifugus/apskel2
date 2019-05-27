@@ -1,0 +1,28 @@
+{
+  "name": "apskel2",
+  "version": "0.1.0",
+  "description": "Mobile App Builder (XML + JavaScript = PWA)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Solifugus/apskel2.git"
+  },
+  "keywords": [
+    "PWA",
+    "mobile",
+    "app",
+    "XML"
+  ],
+  "author": "Matthew C. Tedder",
+  "license": "GPL-2.0-only",
+  "bugs": {
+    "url": "https://github.com/Solifugus/apskel2/issues"
+  },
+  "homepage": "https://github.com/Solifugus/apskel2#readme",
+  "dependencies": {
+    "ordxml": "^0.1.0"
+  }
+}
