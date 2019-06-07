@@ -1,6 +1,6 @@
 
 self.addEventListener('install', function(e) {
-	console.log('install');
+	console.log('Installing..');
 
 	// Let Browser Known When Finished Caching all Files
 	e.waitUntil(
@@ -26,3 +26,4 @@ self.addEventListener('fetch', function(e) {
 		caches.match(e.request).then(response => response || fetch(e.request))
 	);
 });
+

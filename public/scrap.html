@@ -1,0 +1,286 @@
+
+			<!-- Global Side Slide Menu -->
+			<ons-splitter>
+				<ons-splitter-side id="menu" side="right" width="220px" collapse swipeable>
+					<ons-page>
+						<ons-list>
+							<ons-list-item onclick="fn.load('interact-page.html')" tappable> <span id="menuLabel-interact">Interact</span></ons-list-item>
+							<ons-list-item onclick="fn.load('edit-agent.html')" tappable>    <span id="menuLabel-editAgent">Edit Agent</span></ons-list-item>
+							<ons-list-item onclick="fn.load('edit-self.html')" tappable>     <span id="menuLabel-editSelf">Edit Self</span></ons-list-item>
+							<ons-list-item onclick="fn.load('XXX.html')" tappable>           <span id="menuLabel-logout">Logout</span></ons-list-item>
+						</ons-list>
+					</ons-page>
+				</ons-splitter-side>
+				<ons-splitter-content id="content" page="interact-page.html"></ons-splitter-content>
+			</ons-splitter>
+
+			<!-- Edit Agent Tabs -->
+			<ons-template id="edit-agent.html">
+				<ons-tabbar>
+					<ons-tab label="Agent"  page="agent-page.html"  icon="fa-address-card" active></ons-tab>
+					<ons-tab label="Market" page="market-page.html" icon="fa-group"></ons-tab>
+				</ons-tabbar> 
+			</ons-template>
+
+			<!-- Edit Self Tabs -->
+			<ons-template id="edit-self.html">
+				<ons-tabbar>
+					<ons-tab label="Profile"  page="profile-page.html" icon="fa-address-card-o" active></ons-tab>
+					<ons-tab label="Billing"  page="billing-page.html" icon="fa-money"></ons-tab>
+				</ons-tabbar> 
+			</ons-template>
+
+			<!-- Interact Page -->
+			<ons-template id="interact-page.html">
+				<ons-page id="page-interact">
+					<ons-toolbar>
+						<div class="left">
+							<ons-toolbar-button onclick="fn.load('information-page.html')">
+								<ons-icon icon="fa-info-circle"></ons-icon>
+							</ons-toolbar-button>
+						</div>
+						<div class="center">
+							Interaction
+						</div>
+						<div class="right">
+							<ons-toolbar-button onclick="fn.open()">
+								<ons-icon icon="md-menu"></ons-icon>
+							</ons-toolbar-button>
+						</div>
+					</ons-toolbar>
+					<div id="transcript-display"></div>
+					<ons-input id="message-entry" modifier="underbar" placeholder="Say something.." float></ons-input>
+					
+				</ons-page>
+			</ons-template>
+
+			<!-- Information Page -->
+			<ons-template id="information-page.html">
+				<ons-page id="page-information">
+					<ons-toolbar>
+						<div class="left">
+							<ons-toolbar-button onclick="fn.load('interact-page.html')">
+								<ons-icon icon="fa-child"></ons-icon>
+							</ons-toolbar-button>
+						</div>
+						<div class="center">
+							About MechaFriend
+						</div>
+						<div class="right">
+							<ons-toolbar-button onclick="fn.open()">
+								<ons-icon icon="md-menu"></ons-icon>
+							</ons-toolbar-button>
+						</div>
+					</ons-toolbar>
+					
+					<!-- General Information About MechaFriend -->
+					<ons-card>
+						<div class="title">
+							Your Personal Agent
+						</div>
+						<div class="content">
+							<p>Ever wish you could change people?  Add and remove aspects of their personalities?  Yeah -- it's not going to work.</p>
+							<p>However, MechaFriend lets you design your own artificially intelligent agent.  It's personality will try to adjust to compatibility with your own.  And, you can add personality traits to your liking, including skills that might make your agent better at assisting you.</p>
+							<p>With MechaFriend, you can literally Make a Friend!</p>
+						</div>
+					</ons-card>
+				</ons-page>
+			</ons-template>
+			
+			<!-- Agent Page -->
+			<ons-template id="agent-page.html">
+				<ons-page id="page-agent">
+					<ons-toolbar>
+						<div class="left">
+							<ons-toolbar-button onclick="fn.load('interact-page.html')">
+								<ons-icon icon="fa-child"></ons-icon>
+							</ons-toolbar-button>
+						</div>
+						<div class="center">
+							Agent Information
+						</div>
+						<div class="right">
+							<ons-toolbar-button onclick="fn.open()">
+								<ons-icon icon="md-menu"></ons-icon>
+							</ons-toolbar-button>
+						</div>
+					</ons-toolbar>
+					
+					<!-- Basic Agent Fields -->
+					<ons-list>
+						<!-- Agent to View / Modify -->
+						<ons-list-header>Agent To View / Modify</ons-list-header>
+						<ons-row align="center" style="padding-top:15px; padding-bottom:15px;">
+							<ons-col style="text-align:center;">
+								<ons-select id="agent-name" onchange="editSelects(event)">
+									 <option value="synthia">Synthia</option>
+									 <option value="new">Create New</option>
+								</ons-select>
+							</ons-col>
+						</ons-row>
+						
+						<!-- Agent Traits -->
+						<ons-list-header>Personality Traits</ons-list-header>
+						<ons-list-item expandable>
+							<div class="left">Price</div>
+							<div class="center">Trait Name</div>
+							<div class="right">Activated?</div>
+							<div class="expandable-content">
+								The price shown here is per day activated -- the minimum being one day.
+								The switch on the right of each trait name may be used to active or de-activate that trait.  
+								Green indicates activated.
+							</div>
+						</ons-list-item>
+						
+						<!-- Example Trait -->
+						<ons-list-item expandable>
+							<div class="left">$0.15</div>
+							<div class="center">Inspirational Wisdom</div>
+							<div class="right"><ons-switch id="trait-id-42" checked></ons-switch></div>
+							<div class="expandable-content">Interjections of inspirational wisdom, triggered by downtrod notions.</div>
+						</ons-list-item>
+						
+					</ons-list>
+						
+						
+					</ons-list>
+					
+				</ons-page>
+			</ons-template>
+
+			<!-- Market Page -->
+			<ons-template id="market-page.html">
+				<ons-page id="page-market">
+					<ons-toolbar>
+						<div class="left">
+							<ons-toolbar-button onclick="fn.load('interact-page.html')">
+								<ons-icon icon="fa-child"></ons-icon>
+							</ons-toolbar-button>
+						</div>
+						<div class="center">
+							Personality Trait Market
+						</div>
+						<div class="right">
+							<ons-toolbar-button onclick="fn.open()">
+								<ons-icon icon="md-menu"></ons-icon>
+							</ons-toolbar-button>
+						</div>
+
+					</ons-toolbar>
+					
+					<!-- Trait Search -->
+					<ons-search-input placeholder="Search" style="width:100%;" onchange="ons.notification.alert('Searched for: ' + this.value)"></ons-search-input>
+						
+					<!-- Trait Editor -->
+					<ons-list>
+						<!-- <ons-list-header>Personality Traits</ons-list-header> -->
+						<ons-list-item expandable>
+							<div class="left">Price</div>
+							<div class="center">Trait Name</div>
+							<div class="right">Activated?</div>
+							<div class="expandable-content">
+								The price shown here is per day activated -- the minimum being one day.
+								The switch on the right of each trait name may be used to active or de-activate that trait.  
+								Green indicates activated.
+							</div>
+						</ons-list-item>						
+
+						<!-- Example Trait -->
+						<ons-list-item expandable>
+							<div class="left">$0.15</div>
+							<div class="center">Inspirational Wisdom</div>
+							<div class="right"><ons-switch id="trait-id-42" checked></ons-switch></div>
+							<div class="expandable-content">Interjections of inspirational wisdom, triggered by downtrod notions.</div>
+						</ons-list-item>
+						<ons-list-item expandable>
+							<div class="left">$0.10</div>
+							<div class="center">College Algebra Assistant</div>
+							<div class="right"><ons-switch id="trait-id-42"></ons-switch></div>
+							<div class="expandable-content">Helps you understand concepts in college algebra.</div>
+						</ons-list-item>
+						<ons-list-item expandable>
+							<div class="left">$0.25</div>
+							<div class="center">Business Accouting Expert</div>
+							<div class="right"><ons-switch id="trait-id-42"></ons-switch></div>
+							<div class="expandable-content">Teaches and answers questions on business accounting practices.</div>
+						</ons-list-item>
+						
+					</ons-list>
+				</ons-page>
+			</ons-template>
+		
+			<!-- Profile Page -->
+			<ons-template id="profile-page.html">
+				<ons-page id="page-profile">
+					<ons-toolbar>
+						<div class="left">
+							<ons-toolbar-button onclick="fn.load('interact-page.html')">
+								<ons-icon icon="fa-child"></ons-icon>
+							</ons-toolbar-button>
+						</div>
+						<div class="center">
+							User Profile
+						</div>
+						<div class="right">
+							<ons-toolbar-button onclick="fn.open()">
+								<ons-icon icon="md-menu"></ons-icon>
+							</ons-toolbar-button>
+						</div>
+					</ons-toolbar>
+					
+					<!-- User's Profile Info -->
+					<div style="text-align: center; margin-top: 100px;">
+						<p><ons-input id="user-casualName" onChange="mechafriend.updateField(this)" modifier="underbar" placeholder="Casual Name" float></ons-input></p>
+						<p><ons-input id="user-email"      onChange="mechafriend.updateField(this)" modifier="underbar" placeholder="Email" float></ons-input></p>
+						<p><ons-input id="user-phone"      onChange="mechafriend.updateField(this)" modifier="underbar" placeholder="Phone" float></ons-input></p>
+					</div>
+				</ons-page>
+			</ons-template>
+		
+			<!-- Billing Page -->
+			<ons-template id="billing-page.html">
+				<ons-page id="page-billing">
+					<ons-toolbar>
+						<div class="left">
+							<ons-toolbar-button onclick="fn.load('interact-page.html')">
+								<ons-icon icon="fa-child"></ons-icon>
+							</ons-toolbar-button>
+						</div>
+						<div class="center">
+							Billing Information
+						</div>
+						<div class="right">
+							<ons-toolbar-button onclick="fn.open()">
+								<ons-icon icon="md-menu"></ons-icon>
+							</ons-toolbar-button>
+						</div>
+					</ons-toolbar>
+					
+					<!-- Billing Information -->
+					<div style="text-align: center; margin-top: 30px;">
+						<p><ons-input id="user-legalName" onChange="mechafriend.updateField(this)" modifier="underbar" placeholder="Legal Name" float></ons-input></p>
+						<p><ons-input id="user-address1"  onChange="mechafriend.updateField(this)" modifier="underbar" placeholder="Address (line 1)" float></ons-input></p>
+						<p><ons-input id="user-address2"  onChange="mechafriend.updateField(this)" modifier="underbar" placeholder="Address (line 2)" float></ons-input></p>
+						<p><ons-input id="user-city"      onChange="mechafriend.updateField(this)" modifier="underbar" placeholder="City" float></ons-input></p>
+						<p><ons-input id="user-state"     onChange="mechafriend.updateField(this)" modifier="underbar" placeholder="State or Province" float></ons-input></p>
+						<p><ons-input id="user-postal"    onChange="mechafriend.updateField(this)" modifier="underbar" placeholder="Postal Code" float></ons-input></p>
+						<p><ons-input id="user-country"   onChange="mechafriend.updateField(this)" modifier="underbar" placeholder="Country" float></ons-input></p>
+					</div>
+					
+				</ons-page>
+			</ons-template>
+				
+			<!-- Porch Modal -->
+			<ons-modal id="login-modal" direction="up">
+				<ons-card>
+					<div class="title">HyperConversal -- MechaFriend App</div>
+					<div class="content">
+						<div style="text-align: center; margin-top: 30px;">
+							<img src="images/logo.jpg" alt="Onsen UI" style="width: 20%">
+							<hr/>
+							<ons-button onclick="mechafriend.authUser()">Login</ons-button>
+						</div>
+					</div>
+				</ons-card>
+			</ons-modal>
+

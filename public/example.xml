@@ -1,0 +1,19 @@
+<application>
+
+	<drawer>
+		<option show="register">Register</option>
+		<option modal="login">Login</option>
+	</drawer>
+	
+	<page id="register" title="Register">
+		<input label="First Name"/>
+		<input label="Last Name"/>
+		<input label="Email"/>>
+	</page>
+
+	<page id="login" title="Login">
+		<input label="Login"/>
+		<input label="Password"/>
+	</page>
+
+</application>

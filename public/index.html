@@ -14,6 +14,33 @@
 		</script>
 	</head>
 	<body>
-		<ons-button onclick="alert('Test Succeeded')">TEST</ons-button>
+
+
+
+		
+			<!-- Start the App -->
+			<script>
+				// ==========<< For Using Onsen UI >>========== //
+
+				window.fn = {};
+
+				window.fn.open = function() {
+					let menu = document.getElementById('menu');
+					menu.open();
+				};
+
+				window.fn.load = function(page) {
+					let content = document.getElementById('content');
+					let menu = document.getElementById('menu');
+					content.load(page).then(menu.close.bind(menu));
+				};
+
+				// ==========<< For Using Onsen UI >>========== //
+				document.addEventListener('DOMContentLoaded', () => {
+					// Start App
+				});
+			</script>
+
+
 	</body>
 </html>

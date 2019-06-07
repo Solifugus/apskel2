@@ -1,0 +1,40 @@
+
+<Application id="myapp" version="0.1.0" landing="landing" require="mylib" >
+	<header id="main-header">
+		<left>
+			<icon name="fa-home"/>
+		</left>
+		<middle>
+			{page.title}
+		</middle>
+		<right>
+			<icon name="md-menu"/>
+		</right>
+	</header>
+	<page id="landing" title="My App's Landing Page" header="main-header" footer="main-footer">
+	</page>
+
+	<page id="
+
+		<Row spacing="between|around|left|right">
+			<title>xx</title>
+			<yesno id="var1" default="off"/>
+			<input id="var2" regex="regex"/>
+			<options id="var1" option="value1" regex="regex"/>
+
+			<page content="id"/>
+			<popup content="id"/>
+			<insert content="id"/>
+		</Row>
+
+		<Col spacing="between|around|top|bottom">
+		</Col>
+
+		<Box>
+		</Box>
+
+		<Trigger OnChanged="var1 var2">
+		</Trigger>
+
+</Application>
+

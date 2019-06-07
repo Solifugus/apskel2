@@ -23,6 +23,6 @@
   },
   "homepage": "https://github.com/Solifugus/apskel2#readme",
   "dependencies": {
-    "ordxml": "^0.1.0"
+    "ordxml": "^0.1.2"
   }
 }
